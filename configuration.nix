@@ -87,10 +87,6 @@
     # Shell
     quickshell
     noctalia-shell
-    # waybar
-    # hyprpaper
-    mako
-    rofi
     hyprpolkitagent
 
     xterm
