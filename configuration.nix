@@ -88,7 +88,7 @@
     quickshell
     noctalia-shell
     # waybar
-    hyprpaper
+    # hyprpaper
     mako
     rofi
     hyprpolkitagent

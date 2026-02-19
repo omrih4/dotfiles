@@ -47,26 +47,6 @@ in
     davinci-resolve
   ];
 
-  systemd.user.timers."wallpaper" = {
-    Install.WantedBy = [ "timers.target" ];
-    Timer = {
-      OnCalendar = [
-        "06:00"
-        "18:00"
-      ];
-      Persistent = true;
-      Unit = "wallpaper.service";
-    };
-  };
-
-  systemd.user.services."wallpaper" = {
-    Install.WantedBy = [ "default.target" ];
-    Service = {
-      Type = "oneshot";
-      ExecStart = "/home/%u/nixos-dotfiles/config/hypr/wallpaper.sh";
-    };
-  };
-
   programs.obs-studio = {
     enable = true;
 
