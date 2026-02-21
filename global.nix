@@ -83,6 +83,8 @@
     nodejs
     nodePackages.pnpm
 
+    rivalcfg
+
     wineWow64Packages.stable
     protontricks
 

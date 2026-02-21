@@ -1,6 +1,7 @@
 {
   inputs,
   config,
+  osConfig,
   pkgs,
   ...
 }:
@@ -16,7 +17,7 @@ in
     enable = true;
     shellAliases = {
       btw = "echo i use nix btw";
-      nixos-switch = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/dotfiles#${config.networking.hostName}";
+      nixos-switch = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/dotfiles#${osConfig.networking.hostName}";
     };
     profileExtra = ''
       if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then

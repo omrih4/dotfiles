@@ -12,7 +12,7 @@
     ../../global.nix
   ];
 
-  networking.hostname = "pc";
+  networking.hostName = "pc";
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
