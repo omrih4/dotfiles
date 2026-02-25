@@ -14,6 +14,12 @@
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
 
+  # Enable access to epomaker keyboard
+  services.udev.extraRules = ''KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"'';
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
@@ -47,6 +53,7 @@
     extraGroups = [
       "wheel"
       "input"
+      "libvirtd"
     ]; # Enable ‘sudo’ for the user.
   };
 
@@ -65,6 +72,8 @@
 
     wineWow64Packages.stable
     protontricks
+
+    dnsmasq
   ];
   environment.localBinInPath = true;
   programs.nix-ld = {

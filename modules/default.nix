@@ -29,6 +29,8 @@ in
     zoom-us
     moonlight-qt
 
+    qbittorrent
+
     fluxer
 
     davinci-resolve
