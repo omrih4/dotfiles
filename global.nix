@@ -17,6 +17,8 @@
   # Enable access to epomaker keyboard
   services.udev.extraRules = ''KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"'';
 
+  services.usbmuxd.enable = true;
+
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
@@ -74,6 +76,9 @@
     protontricks
 
     dnsmasq
+
+    # Allow mounting iphone
+    libimobiledevice
   ];
   environment.localBinInPath = true;
   programs.nix-ld = {
