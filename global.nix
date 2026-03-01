@@ -22,6 +22,8 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
+  virtualisation.docker.enable = true;
+
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
@@ -56,7 +58,8 @@
       "wheel"
       "input"
       "libvirtd"
-    ]; # Enable ‘sudo’ for the user.
+      "docker"
+    ];
   };
 
   nixpkgs.config.allowUnfree = true;
