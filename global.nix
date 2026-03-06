@@ -27,6 +27,10 @@
   programs.virt-manager.enable = true;
 
   virtualisation.docker.enable = true;
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
 
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
@@ -71,7 +75,6 @@
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
-    git
     vim
     wget
 
