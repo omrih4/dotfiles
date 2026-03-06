@@ -1,4 +1,5 @@
 {
+  pkgs,
   config,
   osConfig,
   ...
@@ -9,6 +10,13 @@
     shellAliases = {
       btw = "echo i use nix btw";
       nixos-switch = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/dotfiles#${osConfig.networking.hostName}";
+
+      ls = "${pkgs.eza}/bin/eza";
+      l = "${pkgs.eza}/bin/eza -lah";
+      ll = "${pkgs.eza}/bin/eza -l";
+      la = "${pkgs.eza}/bin/eza -a";
+      lt = "${pkgs.eza}/bin/eza --tree";
+      lla = "${pkgs.eza}/bin/eza -la";
     };
     profileExtra = ''
       if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
@@ -18,4 +26,9 @@
   };
   programs.direnv.enable = true;
   programs.starship.enable = true;
+
+  home.packages = with pkgs; [
+    eza
+    btop
+  ];
 }

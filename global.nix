@@ -55,9 +55,7 @@
   programs.xfconf.enable = true;
   services.gvfs.enable = true;
 
-  programs.steam = {
-    enable = true;
-  };
+  programs.steam.enable = true;
 
   services.libinput.enable = true;
   users.users.omrih = {

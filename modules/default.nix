@@ -9,9 +9,10 @@ in
 {
   imports = [
     ./desktop.nix
+    ./shell.nix
     ./obs.nix
-    ./bash.nix
     ./vscode.nix
+    ./games.nix
   ];
 
   home.packages = with pkgs; [

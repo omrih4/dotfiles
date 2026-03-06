@@ -27,6 +27,8 @@
     wl-clipboard
     cliphist
 
+    fastfetch
+
     pwvucontrol
     
     vlc
