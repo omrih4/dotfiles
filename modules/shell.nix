@@ -3,8 +3,7 @@
   config,
   osConfig,
   ...
-}:
-{
+}: {
   programs.bash = {
     enable = true;
     shellAliases = {
@@ -41,4 +40,4 @@
   home.packages = with pkgs; [
     eza
   ];
-}  
+}

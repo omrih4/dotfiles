@@ -3,9 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-
-{
+}: {
   nix.settings = {
     substituters = ["https://nix-gaming.cachix.org"];
     trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
@@ -27,7 +25,7 @@
 
   virtualisation.libvirtd = {
     enable = true;
-    qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
+    qemu.vhostUserPackages = with pkgs; [virtiofsd];
   };
 
   programs.virt-manager.enable = true;
@@ -35,7 +33,7 @@
   virtualisation.docker.enable = true;
   programs.git = {
     enable = true;
-    package = pkgs.git.override { withLibsecret = true; };
+    package = pkgs.git.override {withLibsecret = true;};
     lfs.enable = true;
   };
 
@@ -58,7 +56,7 @@
     enable = true;
     xwayland.enable = true;
   };
- 
+
   programs.thunar.enable = true;
   programs.xfconf.enable = true;
   services.gvfs.enable = true;
@@ -112,7 +110,7 @@
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
-      (pkgs.runCommand "steamrun-lib" { } "mkdir $out; ln -s ${pkgs.steam-run.fhsenv}/usr/lib64 $out/lib")
+      (pkgs.runCommand "steamrun-lib" {} "mkdir $out; ln -s ${pkgs.steam-run.fhsenv}/usr/lib64 $out/lib")
     ];
   };
 

@@ -7,9 +7,7 @@
   pkgs,
   modulesPath,
   ...
-}:
-
-{
+}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -22,9 +20,13 @@
     "usb_storage"
     "sd_mod"
   ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "ntsync" "v4l2loopback" ];
-  boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
+  boot.initrd.kernelModules = [];
+  boot.kernelModules = [
+    "kvm-intel"
+    "ntsync"
+    "v4l2loopback"
+  ];
+  boot.extraModulePackages = [pkgs.linuxPackages.v4l2loopback];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/bd03d209-9d07-42eb-8d85-a65de364f24b";
@@ -45,7 +47,7 @@
     fsType = "ntfs";
   };
 
-  swapDevices = [ ];
+  swapDevices = [];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

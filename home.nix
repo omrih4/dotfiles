@@ -4,10 +4,8 @@
   osConfig,
   pkgs,
   ...
-}:
-
-{
-  imports = [ ./modules/default.nix ];
+}: {
+  imports = [./modules/default.nix];
 
   home.username = "omrih";
   home.homeDirectory = "/home/omrih";

@@ -2,11 +2,9 @@
   inputs,
   pkgs,
   ...
-}:
-let
-  fluxer = import ./fluxer.nix { inherit pkgs; };
-in
-{
+}: let
+  fluxer = import ./fluxer.nix {inherit pkgs;};
+in {
   imports = [
     ./desktop.nix
     ./shell.nix

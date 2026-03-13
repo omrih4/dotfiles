@@ -32,55 +32,53 @@
     };
   };
 
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      catppuccin,
-      nvf,
-      ...
-    }@inputs:
-    {
-      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/laptop/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.omrih = {
-                imports = [
-                  ./home.nix
-                  nvf.homeManagerModules.default
-                  catppuccin.homeModules.catppuccin
-                ];
-              };
-              extraSpecialArgs = { inherit inputs; };
+  outputs = {
+    nixpkgs,
+    home-manager,
+    catppuccin,
+    nvf,
+    ...
+  } @ inputs: {
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      modules = [
+        ./hosts/laptop/configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.omrih = {
+              imports = [
+                ./home.nix
+                nvf.homeManagerModules.default
+                catppuccin.homeModules.catppuccin
+              ];
             };
-          }
-        ];
-      };
-
-      nixosConfigurations.pc = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/pc/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.omrih = {
-                imports = [
-                  ./home.nix
-                  nvf.homeManagerModules.default
-                  catppuccin.homeModules.catppuccin
-                ];
-              };
-              extraSpecialArgs = { inherit inputs; };
-            };
-          }
-        ];
-      };
+            extraSpecialArgs = {inherit inputs;};
+          };
+        }
+      ];
     };
+
+    nixosConfigurations.pc = nixpkgs.lib.nixosSystem {
+      modules = [
+        ./hosts/pc/configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.omrih = {
+              imports = [
+                ./home.nix
+                nvf.homeManagerModules.default
+                catppuccin.homeModules.catppuccin
+              ];
+            };
+            extraSpecialArgs = {inherit inputs;};
+          };
+        }
+      ];
+    };
+  };
 }

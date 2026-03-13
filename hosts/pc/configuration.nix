@@ -3,17 +3,15 @@
   lib,
   pkgs,
   ...
-}:
-
-{
+}: {
   # Import a host-specific hardware config (copy/adjust of generated file).
-  imports = [ 
+  imports = [
     ./hardware-configuration.nix
     ../../global.nix
   ];
 
   networking.hostName = "pc";
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.open = true;
 }

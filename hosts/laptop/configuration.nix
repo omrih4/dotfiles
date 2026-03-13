@@ -3,10 +3,8 @@
   lib,
   pkgs,
   ...
-}:
-
-{
-  imports = [ 
+}: {
+  imports = [
     ./hardware-configuration.nix
     ../../global.nix
   ];
