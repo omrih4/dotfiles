@@ -12,6 +12,7 @@ in
     ./shell.nix
     ./obs.nix
     ./vscode.nix
+    ./neovim.nix
     ./games.nix
   ];
 

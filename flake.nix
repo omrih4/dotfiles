@@ -26,6 +26,10 @@
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -33,6 +37,7 @@
       nixpkgs,
       home-manager,
       catppuccin,
+      nvf,
       ...
     }@inputs:
     {
@@ -47,6 +52,7 @@
               users.omrih = {
                 imports = [
                   ./home.nix
+                  nvf.homeManagerModules.default
                   catppuccin.homeModules.catppuccin
                 ];
               };
@@ -67,6 +73,7 @@
               users.omrih = {
                 imports = [
                   ./home.nix
+                  nvf.homeManagerModules.default
                   catppuccin.homeModules.catppuccin
                 ];
               };
