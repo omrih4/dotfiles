@@ -112,7 +112,7 @@
     nodejs
     nodePackages.pnpm
 
-    wineWow64Packages.stable
+    wine
     protontricks
 
     dnsmasq
