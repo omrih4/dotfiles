@@ -37,6 +37,7 @@
         enableFormat = true;
 
         nix.enable = true;
+        java.enable = true;
       };
     };
   };

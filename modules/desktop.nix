@@ -209,6 +209,13 @@
       xdg-desktop-portal-hyprland
     ];
   };
+  services.xembed-sni-proxy.enable = true;
+  xdg.desktopEntries."org.kde.xembedsniproxy" = {
+    name = "XEmbed SNI Proxy (Compat)";
+    exec = "${pkgs.kdePackages.plasma-workspace}/bin/xembedsniproxy %U";
+    type = "Application";
+    noDisplay = true;
+  };
   catppuccin.hyprland.enable = true;
   home.packages = with pkgs; [
     # Terminals

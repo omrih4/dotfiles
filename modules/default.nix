@@ -23,7 +23,6 @@ in {
 
     equibop
 
-    prismlauncher
     blockbench
 
     zoom-us
