@@ -78,6 +78,7 @@
 
   programs.steam = {
     enable = true;
+    protontricks.enable = true;
     extraCompatPackages = with pkgs; [
       proton-ge-bin
     ];
@@ -113,8 +114,7 @@
     nodejs
     nodePackages.pnpm
 
-    wine
-    protontricks
+    wineWow64Packages.stable
 
     dnsmasq
 
