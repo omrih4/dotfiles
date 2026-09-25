@@ -1,0 +1,58 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "workspaces"
+  ],
+  "modules-center": [
+    "window"
+  ],
+  "modules-right": [
+    "tray",
+    "custom/airpods",
+    "pulseaudio",
+    "battery",
+    "memory",
+    "disk",
+    "clock#time"
+  ],
+  "reload_style_on_change": true,
+
+  "window": {
+      "format": "{}"
+  },
+  "workspaces": {
+    "scroll-interval": 100,
+    "on-scroll-up": "mmsg dispatch viewtoleft_have_client",
+    "on-scroll-down": "mmsg dispatch viewtoright_have_client"
+  },
+  "tray": {
+    "icon-size": 18
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}% {bt}",
+    "format-muted": " {volume}% {bt}",
+    "icons": ["", "", "", "", "", "", "", ""],
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pamixer -i 2",
+    "on-scroll-down": "pamixer -d 2"
+  },
+     "battery": {
+      	"format": "{icon} {}%",
+      	"icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+     },
+  "memory": {
+    "format": " {}%"
+  },
+  "disk": {
+    "interval": 30,
+    "unit": "GB",
+    "format": "disk: {specific_used:0.2f}G",
+    "path": "/",
+    "tooltip": true,
+    "tooltip-format": "Root: Used {specific_used:0.2f}G / free {specific_free:0.2f}G"
+  },
+
+  "clock": {
+  	"format": "{:L%H:%M}"
+  }
+}
