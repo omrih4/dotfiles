@@ -13,6 +13,7 @@
     "battery",
     "memory",
     "disk",
+    "clock#date",
     "clock#time"
   ],
   "reload_style_on_change": true,
@@ -52,7 +53,11 @@
     "tooltip-format": "Root: Used {specific_used:0.2f}G / free {specific_free:0.2f}G"
   },
 
-  "clock": {
+  "clock#date": {
+	  "format": "{:L%d/%m/%Y·%A}"
+  },
+
+  "clock#time": {
   	"format": "{:L%H:%M}"
   }
 }
